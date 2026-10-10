@@ -1,0 +1,95 @@
+# =====================================================================
+# 本仓库只公开代码与文档。以下所有模式都是运行数据 / 语料全文 / 本地配置，
+# 任何情况下不得提交。新增文件类型时，先确认它不属于这几类再调整规则。
+# =====================================================================
+
+# ---- 密钥与本地环境 ----
+.env
+.env.*
+!.env.example
+
+# ---- 语料全文（OA 不等于可再分发，绝不公开）----
+*.pdf
+*.jats
+corpus_by_language/
+downloads/
+deep_reads/
+renders/
+reports/
+cache/
+sync_exports/
+
+# ---- 32 个领域语料文件夹（哈希命名 PDF + index.csv）----
+AI与知识工程共性技术/
+储能与电池/
+先进传感器与MEMS/
+光电子与激光工程/
+农业科技/
+医疗器械与精准医疗/
+半导体与集成电路/
+合成生物学/
+增材制造与先进工艺/
+工业软件与数据基础设施/
+成果转化与创新共性研究/
+数学与计算方法/
+新型显示/
+新材料/
+新能源与光伏/
+智慧能源/
+智能交通与新能源汽车/
+机器人与智能制造/
+材料化学与纳米冶金/
+氢能/
+海洋工程/
+物理与工程物理/
+生命科学与分子生物学/
+生物制药/
+电气与电子工程/
+碳捕集与环保/
+社会科学与商业创新/
+绿色化工与催化/
+网络安全/
+航空航天与无人系统/
+软件与通信/
+量子科技/
+
+# ---- 状态数据库与运行时产物 ----
+*.sqlite3
+*.sqlite3-shm
+*.sqlite3-wal
+*.log
+*.jsonl
+*.pyc
+*.tmp
+__pycache__/
+.venv/
+
+# ---- 根目录数据报表与部署快照（仅保留 README / REPLICATION_GUIDE / LICENSE）----
+/*.csv
+/*.json
+/*.md
+!README.md
+!REPLICATION_GUIDE.md
+
+# ---- acquisition：运行数据、部署专属配置、数据库锁 ----
+acquisition/*.csv
+acquisition/*.json
+acquisition/*.txt
+acquisition/*.log
+acquisition/collector.lock
+
+# ---- acquisition：本地数据目录 ----
+acquisition/backups/
+acquisition/audit/
+acquisition/metadata/
+acquisition/continuous_metadata/
+acquisition/discovery_history/
+acquisition/fulltext_xml/
+acquisition/seeds/
+acquisition/continuous_v4/
+acquisition/migration_v3/
+acquisition/repair_v2/
+acquisition/repair_v3/
+
+# ---- 上游第三方克隆（公开仓库引用上游地址与 commit，不内嵌 .git）----
+acquisition/vendor/
